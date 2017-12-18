@@ -4,4 +4,4 @@ email  tools@inetsoftware.de
 date   2017-12-18
 name   contentsecurity plugin
 desc   Add headers with content security settings
-url    https://github.com/i-net-software/dokuwiki-plugin-content-security
+url    https://github.com/i-net-software/dokuwiki-plugin-contentsecurity
