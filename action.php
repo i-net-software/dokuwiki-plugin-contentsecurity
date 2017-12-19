@@ -32,7 +32,7 @@ class action_plugin_contentsecurity extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function handle_action_headers_send(Doku_Event &$event, $nonce) {
+    public function handle_action_headers_send(Doku_Event $event, $nonce) {
 
         $none = "'none'";
         $self = "'self'";
@@ -73,7 +73,7 @@ class action_plugin_contentsecurity extends DokuWiki_Action_Plugin {
      *                           handler was registered]
      * @return void
      */
-    public function handle_tpl_metaheader_output(Doku_Event &$event, $nonce) {
+    public function handle_tpl_metaheader_output(Doku_Event $event, $nonce) {
 
         foreach( $event->data as $type => &$content ) {
 
