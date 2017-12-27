@@ -19,9 +19,9 @@ class action_plugin_contentsecurity extends DokuWiki_Action_Plugin {
      */
     public function register(Doku_Event_Handler $controller) {
         global $dokuwikiVersion, $JSINFO;
-        $JSINFO['nonce'] = md5($dokuwikiVersion);
-        $controller->register_hook('ACTION_HEADERS_SEND', 'BEFORE', $this, 'handle_action_headers_send', $JSINFO['nonce'], 3999);
-        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'handle_tpl_metaheader_output', $JSINFO['nonce'], 3999);
+        $JSINFO['scriptNonce'] = md5($dokuwikiVersion);
+        $controller->register_hook('ACTION_HEADERS_SEND', 'BEFORE', $this, 'handle_action_headers_send', $JSINFO['scriptNonce'], 3999);
+        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'handle_tpl_metaheader_output', $JSINFO['scriptNonce'], 3999);
     }
 
     /**
